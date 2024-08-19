@@ -103,7 +103,7 @@ function App() {
                 variants={fadeIn("down", 0.2)}
                 initial="hidden"
                 whileInView={"show"}
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: false, amount: 0.6 }}
                 width="180"
                 height="180"
                 className="sm:w-[250px] sm:h-[250px]"
@@ -114,7 +114,7 @@ function App() {
                 variants={fadeIn("down", 0.3)}
                 initial="hidden"
                 whileInView={"show"}
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: false, amount: 0.6 }}
                 className="font-bold text-2xl text-[#092140]"
               >
                 Climate Change
@@ -123,7 +123,7 @@ function App() {
                 variants={fadeIn("down", 0.4)}
                 initial="hidden"
                 whileInView={"show"}
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: false, amount: 0.6 }}
                 className="my-5"
               >
                 <img
@@ -140,7 +140,7 @@ function App() {
               variants={fadeIn("up", 0.5)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.6 }}
+              viewport={{ once: false, amount: 0.6 }}
               className="relative"
             >
               {/* start health systems circle stlyes */}
@@ -154,7 +154,7 @@ function App() {
                   width="30"
                   height="30"
                 />
-                <div className="absolute -left-[80%] hidden group-hover:flex">
+                <div className="w-[260px] absolute left-[calc(-100%+155px)] hidden group-hover:flex">
                   <ul
                     className="
       flex-col text-[14.8px] text-[#2398D6]
@@ -165,7 +165,7 @@ function App() {
                         variants={fadeIn("up", 0.1 * index)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: true, amount: 0.6 }}
+                        viewport={{ once: false, amount: 0.6 }}
                         key={index}
                         className="relative before:content-[''] after:absolute after:w-[4px] after:h-[4px] after:rounded-full after:bg-[#2398D6] after:-left-[10px] after:top-[50%] after:-translate-y-[50%]"
                       >
@@ -189,7 +189,7 @@ function App() {
                   height="30"
                 />
                 <div
-                  className="absolute -right-[125%] top-[40px] hidden group-hover/child:block
+                  className="w-[175px] absolute right-[calc(-100%+30px)] top-[40px] hidden group-hover/child:block
                 "
                 >
                   <ul
@@ -202,7 +202,7 @@ function App() {
                         variants={fadeIn("up", 0.1 * index)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: true, amount: 0.6 }}
+                        viewport={{ once: false, amount: 0.6 }}
                         key={index}
                         className="relative before:content-[''] after:absolute after:w-[4px] after:h-[4px] after:rounded-full after:bg-[#2398D6] after:-left-[10px] after:top-[50%] after:-translate-y-[50%]"
                       >
@@ -211,47 +211,46 @@ function App() {
                     ))}
                   </ul>
                 </div>
-
-                <div className="flex flex-col items-center absolute bottom-0 left-[50%] -translate-x-[50%] w-[150px] h-[150px] sm:w-[190px] sm:h-[190px] bg-[#175D96] rounded-full">
-                  <div className="text-white font-semibold text-sm mt-4">
-                    {diagramData[2].title}
-                  </div>
-                  <img
-                    src="/images/community.png"
-                    alt="community"
-                    width="30"
-                    height="30"
-                  />
-                  <div className="absolute w-[400px] -left-[calc(100%+44px)] hidden group-hover:flex">
-                    <ul
-                      className="
-      flex-col text-[14.8px] text-[#2398D6]
-    "
-                    >
-                      {diagramData[2].hoverList.map((item, index) => (
-                        <motion.li
-                          variants={fadeIn("up", 0.1 * index)}
-                          initial="hidden"
-                          whileInView={"show"}
-                          viewport={{ once: true, amount: 0.6 }}
-                          key={index}
-                          className="relative before:content-[''] after:absolute after:w-[4px] after:h-[4px] after:rounded-full after:bg-[#2398D6] after:-left-[10px] after:top-[50%] after:-translate-y-[50%]"
-                        >
-                          {item}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
               </div>
               {/* end healthcare organizations styles */}
+              <div className="group flex flex-col items-center absolute bottom-0 left-[50%] -translate-x-[50%] w-[150px] h-[150px] sm:w-[190px] sm:h-[190px] bg-[#175D96] rounded-full">
+                <div className="text-white font-semibold text-sm mt-4">
+                  {diagramData[2].title}
+                </div>
+                <img
+                  src="/images/community.png"
+                  alt="community"
+                  width="30"
+                  height="30"
+                />
+                <div className="absolute w-[200px] left-[calc(-100%-98px)] hidden group-hover:flex">
+                  <ul
+                    className="
+      flex-col text-[14.8px] text-[#2398D6]
+    "
+                  >
+                    {diagramData[2].hoverList.map((item, index) => (
+                      <motion.li
+                        variants={fadeIn("up", 0.1 * index)}
+                        initial="hidden"
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0.6 }}
+                        key={index}
+                        className="relative before:content-[''] after:absolute after:w-[4px] after:h-[4px] after:rounded-full after:bg-[#2398D6] after:-left-[10px] after:top-[50%] after:-translate-y-[50%]"
+                      >
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
               variants={fadeIn("up", 0.7)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.6 }}
+              viewport={{ once: false, amount: 0.6 }}
               className="my-5"
             >
               <img
@@ -273,7 +272,7 @@ function App() {
                   variants={fadeIn("up", 0.2)}
                   initial="hidden"
                   whileInView={"show"}
-                  viewport={{ once: true, amount: 0.6 }}
+                  viewport={{ once: false, amount: 0.6 }}
                   className="text-base text-white w-[250px]"
                 >
                   <h3 className="text-[#175D96] text-center font-[700] mb-[7px] text-[16px]">
@@ -289,7 +288,7 @@ function App() {
                   variants={fadeIn("up", 0.4)}
                   initial="hidden"
                   whileInView={"show"}
-                  viewport={{ once: true, amount: 0.6 }}
+                  viewport={{ once: false, amount: 0.6 }}
                   className="text-base text-white w-[250px]"
                 >
                   <h3 className="text-[#3276BA] text-center font-[700] mb-[7px] text-[16px]">
@@ -305,7 +304,7 @@ function App() {
                   variants={fadeIn("up", 0.6)}
                   initial="hidden"
                   whileInView={"show"}
-                  viewport={{ once: true, amount: 0.6 }}
+                  viewport={{ once: false, amount: 0.6 }}
                   className="text-base text-white w-[250px]"
                 >
                   <h3 className="text-[#2398D6] text-center font-[700] mb-[7px] text-[16px]">
@@ -326,7 +325,7 @@ function App() {
                   variants={fadeIn(index == 0 ? "right" : "left", 0.2)}
                   initial="hidden"
                   whileInView={"show"}
-                  viewport={{ once: true, amount: 0.5 }}
+                  viewport={{ once: false, amount: 0.5 }}
                   key={index}
                   className="relative w-full sm:w-[400px]"
                 >
